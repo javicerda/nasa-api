@@ -1,7 +1,7 @@
 <template>
     <v-app-bar
       app
-      color="primary"
+      color="indigo darken-4"
       dark
     >
       <div class="d-flex align-center">
@@ -9,30 +9,55 @@
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/287px-NASA_logo.svg.png"
           transition="scale-transition"
           width="40"
         />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <h4> Nasa App</h4>
       </div>
 
       <v-spacer></v-spacer>
+      
+          <v-toolbar-items class="hidden-sm-and-down">
+            <v-btn
+              v-for="item in menu"
+              :key="item.icon"
+              :to="item.link"
+              
+            >{{ item.title }}</v-btn>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+          </v-toolbar-items>
+
+          <v-menu class="hidden-md-and-up">
+            <v-list>
+              <v-list-tile v-for="item in menu" :key="item.icon">
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>   
+            </v-list>
+          </v-menu>
+
     </v-app-bar>
 </template>
+
+
+<script>
+export default {
+  data () {
+    return {
+      menu: [
+        { icon: 'home', title: 'APOD', link:'apod' },
+        { icon: 'info', title: 'ROVER', link:'rover' },
+      ]
+    }
+  },
+  
+  methods: {
+    menuItems () {
+      return this.menu
+    }
+  }
+  
+}
+</script>

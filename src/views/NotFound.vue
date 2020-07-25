@@ -1,6 +1,13 @@
 <template>
-  <div align="center" class="mt-16">
-    <iframe src="https://media.giphy.com/media/9tx0gy37p7oXu/giphy.gif" width="480" height="270" frameBorder="0"></iframe><p><a href="/">Page not Found</a></p>
+  <div class="mt-16">
+    <v-main>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <iframe src="https://giphy.com/embed/9tx0gy37p7oXu" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+          <p><a href="/">PÁGINA NO ENCONTRADA</a></p>
+        </v-row>
+      </v-container>
+    </v-main>
   </div>
 </template>
 

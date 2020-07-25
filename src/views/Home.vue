@@ -1,13 +1,26 @@
 <template>
-  <div class="home">
-    algo
-  </div>
+  <v-app>
+    <v-img :src="apod.url" min-height="100%">
+      <v-btn  class="mt-16" @click="login" color="red darken-4">🚀 ¡ENTRAR! 🚀</v-btn>
+    </v-img>  
+  </v-app>
 </template>
 
 <script>
-// @ is an alias to /src
+import { mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'Home'
+  computed:{
+    ...mapState(["apod"])
+  },
+  methods:{
+    ...mapActions(["getApod"])
+  },
+  created() {
+    this.getApod();
+  },
+  getters:{
+    
+  }
 };
 </script>
