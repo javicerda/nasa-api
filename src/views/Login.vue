@@ -59,7 +59,8 @@
 
 <script>
 import Firebase from 'firebase'
-  export default {
+
+export default {
     data: () => ({
     user:'',
     password: '',
@@ -69,7 +70,7 @@ import Firebase from 'firebase'
     login(){
       Firebase.auth().signInWithEmailAndPassword(this.user, this.password)
       .then(()=>{
-        this.$router.push('/rover')
+        this.$router.push('/apod')
         alert (`Bienvenido ${this.user}`)
       }) .catch(() =>{
         alert ('NOOOOOO')
