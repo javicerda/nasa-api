@@ -10,21 +10,16 @@
             </v-date-picker>
           </v-col>
           <v-col cols="12" md="8">
-            <v-card
-              class="mx-auto"
-              max-width="800">
+            <v-card class="mx-auto" max-width="800">
+            
               <v-img v-if="apod.media_type=='image'" :src="apod.url" class="white--text align-end" height="375px">
                 <v-card-title>{{apod.title}}</v-card-title>
               </v-img>
-
               <iframe v-else :src="apod.url" width="100%" height="375px" frameborder="0"/>
-
               <v-card-subtitle class="pb-0">{{apod.date}}</v-card-subtitle>
-
               <v-card-text class="text--primary">
                 <div>{{apod.explanation}}</div>
               </v-card-text>
-
             </v-card>
           </v-col>
         </v-row>
