@@ -4,7 +4,7 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col cols="6" md="4">
+          <v-col cols="12" md="4">
             <v-date-picker v-model="date" v-bind:max="today" color="green lighten-1"
             header-color="primary" @click:date="getInfo">
             </v-date-picker>
